@@ -1,0 +1,215 @@
+/* Ini  buat keseluruhan */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Background buat body
+    Color itu text
+    Display flex buat flexible
+    Flex direction column, kurang tau buat apa
+    Alignnya center
+    Padding top itu jarak dari yg paling atas
+    Gap buat masing" elemen
+*/
+body {
+    background-color: #191931;
+    color: #e1e1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    gap: 1rem;
+}
+
+/* Styling buat background */
+.bg-text-animation{
+    position: absolute;
+    top: 10rem;
+    font-size: 12rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    -webkit-text-stroke: 2px #2d2d56;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    z-index: -1;
+    user-select: none;
+}
+
+/* Tiap mau bikin dari div class, kasi titik 
+Ini nyoba buat image
+Width itu ukuran gambarnya berapa
+1 rem=16px
+Border radius buat pinggirannya itu
+Ratio tau lah
+Object fitnya cover karena biar ga gepeng
+Object position, terserah sih ngepasin gambarnya
+*/
+.nyoba{
+    width: 20%;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* a ini buat anchor yang dibuat 
+    Text decoration none itu biar gaada underline yang link itu
+    Color inherit buat nyesuaiin ke sebelumnya apa
+*/
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Ini yang ada di i, gambar sosmednya sama colornya */
+.sosmed i{
+    font-size: 1.5rem;
+    color: #8787a3;
+}
+
+.sosmed i:hover{
+    color: white;
+}
+
+/* Ini sosmed di a, yang bukan terakhir, marginnya dibuat dikanannya ada jarak 1 rem */
+.sosmed a:not(:last-child) {
+    margin-right: 1rem;
+}
+
+/* Ini style ULnya */
+ul.listlink{
+    width: 80%;
+    max-width: 40rem;
+}
+
+/* Ini list style dalam UL */
+ul.listlink li {
+    list-style: none;
+}
+
+ul.listlink li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+.listlink{
+    margin-top: 1rem;
+}
+
+/* Ini link card dikasi display yang flec biar nyatu antar elemen
+    Align biar center pas di tengah
+    Justify content space betweet, masing"nya kepisah
+    Padding itu buat isian kotakannya
+    Border tau lah
+
+    (Dipindah ke UL biar kotakannya rapi)
+    Width panjang dari kotakan
+    Dikasi maksimal biar dia ga berubah Pake MAX
+
+    Box shadow buat bayangan, 10 px ke kanan, 10 px kebawah, 0 itu blurnya, warna item
+*/
+.link-card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2d2d56;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 8px 10px 0 #0f0f25;
+    color: #d0d0e2;
+    border: 2px solid #2d2d56;
+    gap: 1rem;
+}
+
+/* Ini buat list putih pas dipencet */
+.link-card:hover{
+    border: 2px solid white;
+}
+
+.link-icon{
+    /* Ini buat kotakan iconnya 
+    Kalo mau gradient pakenya background image, linear gradient
+    Padding itu isi kotakannya
+    Border tau lah
+    Display flex buat
+    */
+    background-image: linear-gradient(to top, #2b2b83, #8787a3);
+    padding: 0.5rem;
+    border-radius: 10px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ooo ini namanya property baru 
+    Cursor pointer buat menandakan bisa dipencet
+*/
+.link-action{
+    color: #8787a3;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.links .link-text {
+    text-align: center;
+}
+
+.link-action i:hover{
+    color: white;
+}
+
+.copyright{
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    color: #8787a3;
+    font-size: 0.75rem;
+}
+
+/* Ini semua tost buat link berhasil disalin */
+#toast{
+    width: max-content;
+    position: fixed;
+    top: 0;
+}
+
+.toast-container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    color: #0f0f25;
+    animation: muncul 300ms ease-in-out;
+}
+
+.toast-gone{
+    animation: hilang 1s ease-in-out 1s;
+}
+
+@keyframes muncul {
+    from{
+        opacity: 0;
+        transform: translateY(-4rem);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes hilang {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
